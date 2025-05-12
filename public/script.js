@@ -9,7 +9,8 @@ const ratioSelect = document.getElementById("ratio-select");
 const gridGallery = document.querySelector(".gallery-grid");
 
 // API key for Hugging Face
-const API_KEY = "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"
+
+
 
 const examplePrompts = [
 "A magic forest with glowing plants and fairy homes among giant mushrooms",

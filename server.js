@@ -2,6 +2,8 @@ const express = require('express');
 const fetch = require('node-fetch'); // Make sure you're using node-fetch@2
 const cors = require('cors');
 const bodyParser = require('body-parser');
+require('dotenv').config();
+
 
 const app = express();
 const PORT = 3000;
@@ -10,7 +12,8 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static('public')); // Serve your frontend from 'public' folder
 
-const API_KEY = 'your_huggingface_api_key_here';
+const API_KEY = process.env.HUGGINGFACE_API_KEY;
+
 
 app.post('/generate', async (req, res) => {
   const { model, prompt, width, height } = req.body;
